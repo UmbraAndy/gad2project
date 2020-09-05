@@ -23,19 +23,20 @@
             app:srcCompat="@drawable/top_learner" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/learnerSummaryTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2" />
+            app:layout_constraintStart_toStartOf="@+id/learnerNameTxt"
+            app:layout_constraintTop_toBottomOf="@+id/learnerNameTxt" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/learnerNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
