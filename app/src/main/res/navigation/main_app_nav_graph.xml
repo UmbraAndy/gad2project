@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_app_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.gads2.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_leaderBoardMainFragment"
+            app:destination="@id/leaderBoardMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderBoardMainFragment"
+        android:name="com.example.gads2.LeaderBoardMainFragment"
+        android:label="LeaderBoardMainFragment"
+        tools:layout="@layout/fragment_leader_board_main">
+        <action
+            android:id="@+id/action_leaderBoardMainFragment_to_submissionFragment"
+            app:destination="@id/submissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/submissionFragment"
+        android:name="com.example.gads2.SubmissionFragment"
+        android:label="fragment_submission"
+        tools:layout="@layout/fragment_submission" />
+</navigation>
