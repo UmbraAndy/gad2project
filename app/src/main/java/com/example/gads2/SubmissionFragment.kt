@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_submission.*
 
 class SubmissionFragment : Fragment(R.layout.fragment_submission) {
 
-val submissionViewModel:SubmissionViewModel by viewModels()
+    private val submissionViewModel: SubmissionViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,12 +22,16 @@ val submissionViewModel:SubmissionViewModel by viewModels()
         }
 
         projectSubmitButton.setOnClickListener {
-            submissionViewModel.submitForm("aaaa@gmail.com","aaa","bbb","www.contra.com").observe(viewLifecycleOwner,{ response ->
-                if (response.isSuccessful){
-                    Log.d("XXXXXX","FORM_SUBMIT: OK")
-                }
-                else{
-                    Log.d("XXXXXX","FORM_SUBMIT: FAILED")
+            submissionViewModel.submitForm(
+                emailTxt.text.toString(),
+                firstNameTxt.text.toString(),
+                lastNameTxt.text.toString(),
+                projectLinkTxt.text.toString()
+            ).observe(viewLifecycleOwner, { response ->
+                if (response.isSuccessful) {
+                    Log.d("XXXXXX", "FORM_SUBMIT: OK")
+                } else {
+                    Log.d("XXXXXX", "FORM_SUBMIT: FAILED")
                 }
             })
         }
