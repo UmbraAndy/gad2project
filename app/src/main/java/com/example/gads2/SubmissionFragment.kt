@@ -36,11 +36,16 @@ class SubmissionFragment : Fragment(R.layout.fragment_submission) {
             lastNameTxt.text.toString(),
             projectLinkTxt.text.toString()
         ).observe(viewLifecycleOwner, { response ->
+            val submitMessageDialog = SubmitMessageDialog()
+            submitMessageDialog.success = response.isSuccessful
             if (response.isSuccessful) {
                 Log.d("XXXXXX", "FORM_SUBMIT: OK")
+
             } else {
                 Log.d("XXXXXX", "FORM_SUBMIT: FAILED")
             }
+            submitMessageDialog.show(requireActivity().supportFragmentManager, "SUBMIT_DIALOG")
+
         })
     }
 }
